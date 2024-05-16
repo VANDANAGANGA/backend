@@ -92,24 +92,21 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'backend.wsgi.application'
+ASGI_APPLICATION = "backend.asgi.application" 
 
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#      'default': {
-#         "ENGINE": "django.db.backends.postgresql",
-#         "NAME": "e_learning",
-#         "USER": "postgres",
-#         "PASSWORD": "admin",
-#         "HOST": "127.0.0.1",
-#         "PORT": "5432",
-#     }
-# }
-import dj_database_url
-DATABASE={
-    'default':dj_database_url.parse(os.environ.get('DATABASE_URL'))
+DATABASES = {
+     'default': {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "e_learning",
+        "USER": "postgres",
+        "PASSWORD": "admin",
+        "HOST": "127.0.0.1",
+        "PORT": "5432",
+    }
 }
 
 
@@ -202,7 +199,7 @@ RAZORPAY_KEY_ID='rzp_test_AZRz71dY2SuShj'
 RAZORPAY_KEY_SECRET='r337M5JbaEQLABz0sbY9lqMU'
 
 
-ASGI_APPLICATION = "backend.asgi.application" 
+
 
 CHANNEL_LAYERS = {
     "default": {
